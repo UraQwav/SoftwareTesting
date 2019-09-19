@@ -1,12 +1,56 @@
 Source: https://www.britishairways.com
 
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
+1. Поиск маршрута с датой из прошлого
+Шаги: зайти на главную страницу;  выбрать страну и город в который осуществляется перелёт(Krakow, Krakow (KRK), Poland), попытаться выбрать день прошлого месяца
+(например, 01/01/1970) в поле Out.
+Ожидаемый результат: пользователь не может этого сделать. Такая дата заблокирована (Не кликабельна).
+
+2. Поиск маршрута с датой из будущего (более 12 месяцев)
+Шаги: зайти на главную страницу; выбрать страну и город в который осуществляется перелёт(Krakow, Krakow (KRK), Poland), а именно заполнить формы To(Krakow, Krakow (KRK), Poland), Passengers (1 Adult), Travel class(Econom) From(Minatitlan, Minatitlan (MTT), Mexico); для Out выбрать день более чем на 12 месяцев в будущем
+(например, 01/01/2021);
+Ожидаемый результат: пользователь не может этого сделать. Такая дата заблокирована (Не кликабельна).
+
+3. Поиск возможного маршрута без ввода станции отправления
+Шаги: зайти на главную страницу; выбрать страну и город в который осуществляется перелёт(Krakow, Krakow (KRK), Poland), а именно заполнить формы To(Krakow, Krakow (KRK), Poland), Out(default value), Passengers (1 Adult), Travel class(Econom) а From оставить пустой; нажать Search.
+Ожидаемый результат: Кнопка Search не должна быть кликабельной.
+
+4. Бранирование более 10 билетов
+зайти на главную страницу; выбрать страну и город в который осуществляется перелёт(Krakow, Krakow (KRK), Poland), а именно заполнить формы To(Krakow, Krakow (KRK), Poland), Out(default value),  Travel class(Econom) From(Minatitlan, Minatitlan (MTT), Mexico); заполнить Passengers так, чтобы было более
+10 человек (11 Adult).
+Ожидаемый результат: при достижении 9 человек кнопки добавления должны заблокироваться (задизейблится).
+
+5. Наличие других возможных вариантов для перелёта(после клика Search)
+Шаги: зайти на главную страницу; выбрать страну (United Kingdom); заполнить формы To(Krakow, Krakow (KRK), Poland),
+Out(default value), Passengers & Railcards (1 Adult), From (London); нажать Search.
+Ожидаемый результат: Появлениие страницы с подтверждением выбора рейса, с возможностью выбрать другие подходящие даты и стоимости рейсов.
+
+6. Наличие поля Return
+Шаги: зайти на главную страницу; выбрать страну (United Kingdom); заполнить формы To(Krakow, Krakow (KRK), Poland),
+Out(default value), Passengers & Railcards (1 Adult), From (London); нажать Search; Убрать опцию One way only.
+Ожидаемый результат: появилось поле для даты Return.
+
+7. Дата в поле Return не может быть раньше, чем в поле Out
+Шаги: зайти на главную страницу; выбрать страну (United Kingdom); заполнить формы To(Krakow, Krakow (KRK), Poland),
+Out(default value), Passengers & Railcards (1 Adult), From (London); нажать Search; Убрать опцию One way only; заполнить Return(оставить defualt value).
+Ожидаемый результат: появление сообщения об ошибке.
+
+8. Получение письма с подтверждением регистрации на эл.почту
+шаги: зайти на главную страницу; выбрать пункт Register now; Заполнить форму Регистрации;
+Email address&Confirm email address(ваш Email),Choose password&Confirm Password(Input Password),Title(mr), First&Last name(Ваше имя&фамилия), Select a registration option(Join the Executive Club), Username(use my email address (recommended)), 
+Address type(Home), Address line(ваш адрес),Date of birth(Date of birth,Month of birth,Year of birth), Gender(Male),
+I agree to the current Executive Club Terms and Conditions as notified on the website(enebled),
+нажать Join Now; 
+Ожидаемый результат: появление сообщения "You must activate your Executive Club account
+To activate your account, you must open the email that has been sent to xxxxxxx@xxx.xxxx
+Until you do this, you will not be able to access your account online." где  xxxxxxx@xxx.xxxx эл.почта на которую отправлено письмо-подтверждение.
+
+9.Вход в учётную запись
+шаги: зайти на главную страницу; ввести Username(use email address), Password; нажать Log In;
+Ожидаемый результат: Появление личного кабинета;
+
+10. Возможность посмотреть историю бронирования билетов
+Шаги:  зайти на главную страницу; зайти в свой аккаунт (Log In); Шаги: зайти на главную страницу; выбрать страну (United Kingdom); заполнить формы To(Krakow, Krakow (KRK), Poland),
+Out(default value), Passengers & Railcards (1 Adult), From (London); 
+нажать Search; выбрать любой из маршрутов (нажав ADD your Booking); заполнить поля Name и Email; нажать Continue To Pay;
+заполнить поля о своей кредитной карте; нажать Pay; зайти в My Tickets.
+Ожидаемый результат: в My Upcoming Flight должна появиться только что оплаченная бронь.
