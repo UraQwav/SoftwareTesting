@@ -5,7 +5,9 @@ namespace Aircompany.Planes
     public abstract class Plane
     {
         public string modelAirplane;
-        public int maxSpeedAirplane, maxFlightDistanceAirplane, maxLoadCapacityAirplane;
+        public int maxSpeedAirplane;
+        public int maxFlightDistanceAirplane;
+        public int maxLoadCapacityAirplane;
 
         public Plane(string modelAirplane, int maxSpeed, int maxFlightDistance, int maxLoadCapacity)
         {
@@ -61,6 +63,8 @@ namespace Aircompany.Planes
                 * -1521134295 + maxSpeedAirplane.GetHashCode()) * hashCode * -1521134295 + maxFlightDistanceAirplane.GetHashCode())
                 * hashCode * -1521134295 + maxLoadCapacityAirplane.GetHashCode();
         }        
+
+
 
     }
 }

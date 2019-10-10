@@ -29,7 +29,7 @@ namespace AircompanyTests.Tests
            new MilitaryPlane("C-130 Hercules", 650, 5000, 110000, MilitaryType.TRANSPORT)
         };
 
-        Airport airport = new Airport(planes);
+        public Airport airport = new Airport(planes);
 
         public bool GetMilitaryTypeIsTransport()
         {
@@ -38,7 +38,7 @@ namespace AircompanyTests.Tests
             return false;
         }
 
-        public bool GetPlaneMaxLoadCapacity()
+        public bool GetCorrectSortByPlaneMaxLoadCapacity()
         {
             List<Plane> planesSortedByMaxLoadCapacity = airport.SortByMaxLoadCapacityFlights().GetPlanes().ToList();
             for (int i = 0; i < planesSortedByMaxLoadCapacity.Count - 1; i++)
@@ -54,7 +54,7 @@ namespace AircompanyTests.Tests
         [Test]
         public void TestForGetPlaneMaxLoadCapacity()
         {
-            Assert.IsTrue(GetPlaneMaxLoadCapacity());
+            Assert.IsTrue(GetCorrectSortByPlaneMaxLoadCapacity());
         }
 
     }
