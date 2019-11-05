@@ -1,3 +1,3 @@
 # Web Driver
 ## Test output
-![image](https://user-images.githubusercontent.com/43065890/66569582-8a44a900-eb74-11e9-99f9-7f91c0d49285.png)
+![image](https://user-images.githubusercontent.com/43065890/68240582-3e274000-001e-11ea-9f6b-95212cb36af9.png)
