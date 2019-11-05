@@ -41,7 +41,7 @@ namespace Web
         }
         
         [Test]
-        public void Test1()
+        public void CheckPastDate()
         {
             IWebElement datePickerShow = GetWebElement("//div[@class='flt-input gws-flights__flex-box gws-flights__flex-filler gws-flights-form__departure-input gws-flights-form__round-trip']");
             datePickerShow.Click();
@@ -51,7 +51,7 @@ namespace Web
             Assert.IsTrue(IsDisabledCalendarDate(datePickerPastDate));
         }
         [Test]
-        public void Test2()
+        public void CheckFutureDate()
         {
             IWebElement datePickerShow = GetWebElement("//div[@class='flt-input gws-flights__flex-box gws-flights__flex-filler gws-flights-form__departure-input gws-flights-form__round-trip']");
             datePickerShow.Click();
@@ -65,12 +65,13 @@ namespace Web
         }
         
         [Test]
-        public void Test3()
+        public void CheckMaxPassengerAdultTicket()
         {
+            int MaxNumberPassengersAdultTicket = 10;
             IWebElement PassengerPickerShow = GetWebElement("//div[@id='flt-pax-button']");
             PassengerPickerShow.Click();
             IWebElement addPassengerAdult = GetWebElement("//div[@class='gws-flights-widgets-numberpicker__flipper']");
-            for (int numberOfClick = 10; numberOfClick > 0; numberOfClick--)
+            for (int numberOfClick = MaxNumberPassengersAdultTicket; numberOfClick > 0; numberOfClick--)
                 addPassengerAdult.Click();
             Assert.IsTrue(IsDisabledAddPassengersAdult(addPassengerAdult));
         }
