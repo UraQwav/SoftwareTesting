@@ -29,7 +29,7 @@ namespace Web
         [Test]
         public void CheckPastDate()
         {
-            //PageFactory.InitElements(webDriver, homePage)
+            PageFactory.InitElements(webDriver, homePage);
             homePage.DatePickerPastDate.Click();
             for (int numberOfClick = 2; numberOfClick > 0; numberOfClick--)
                 homePage.DatePickerPastDate.Click();
@@ -39,8 +39,9 @@ namespace Web
         public void CheckFutureDate()
         {
             PageFactory.InitElements(webDriver, homePage);
+	    int NumberNextMonthDatePicker = 9;
             homePage.DatePickerPastDate.Click();
-            for (int numberOfClick = 9; numberOfClick > 0; numberOfClick--)
+            for (int numberOfClick = NumberNextMonthDatePicker; numberOfClick > 0; numberOfClick--)
                 homePage.NextButton.Click();
             for (int numberOfClick = 2; numberOfClick > 0; numberOfClick--)
                 homePage.DatePickerFutureDate.Click();
@@ -50,7 +51,8 @@ namespace Web
         [Test]
         public void CheckMaxPassengerAdultTicket()
         {
-            int MaxNumberPassengersAdultTicket = 10;
+            PageFactory.InitElements(webDriver, homePage);          
+	    int MaxNumberPassengersAdultTicket = 10;
             homePage.PassengerPickerShow.Click();
             for (int numberOfClick = MaxNumberPassengersAdultTicket; numberOfClick > 0; numberOfClick--)
                 homePage.AddPassengerAdult.Click();
