@@ -3,10 +3,9 @@ using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-
 namespace Web
 {
-    public abstract class TestBase
+    public abstract class SetUpTest
     {
         protected IWebDriver webDriver;
         [SetUp]
@@ -26,7 +25,7 @@ namespace Web
             return webDriver.FindElement(By.XPath(xPath));
         }
     }
-    public class Tests : TestBase
+    public class Tests : SetUpTest 
     {
         public Boolean IsDisabledAddPassengersAdult(IWebElement element)
         {
@@ -41,7 +40,7 @@ namespace Web
         }
         
         [Test]
-        public void CheckPastDate()
+        public void ObtainPastDate()
         {
             IWebElement datePickerShow = GetWebElement("//div[@class='flt-input gws-flights__flex-box gws-flights__flex-filler gws-flights-form__departure-input gws-flights-form__round-trip']");
             datePickerShow.Click();
@@ -51,21 +50,22 @@ namespace Web
             Assert.IsTrue(IsDisabledCalendarDate(datePickerPastDate));
         }
         [Test]
-        public void CheckFutureDate()
+        public void ObtainFutureDate()
         {
+            int NumberSlideinDatePicker = 9;
             IWebElement datePickerShow = GetWebElement("//div[@class='flt-input gws-flights__flex-box gws-flights__flex-filler gws-flights-form__departure-input gws-flights-form__round-trip']");
             datePickerShow.Click();
             IWebElement nextButton = GetWebElement("//div[@class='gws-travel-calendar__flipper gws-travel-calendar__next']");
-            for (int numberOfClick = 9; numberOfClick > 0; numberOfClick--)
+            for (int numberOfClick = NumberSlideinDatePicker; numberOfClick > 0; numberOfClick--)
                 nextButton.Click();
-            IWebElement datePickerFutureDate = GetWebElement("//calendar-day[@data-day='2020-09-30']");
+            IWebElement datePickerFutureDate = GetWebElement("//calendar-day[@data-day='2020-10-20']");
             for (int numberOfClick = 2; numberOfClick > 0; numberOfClick--)
                 datePickerFutureDate.Click();
             Assert.IsTrue(IsDisabledCalendarDate(datePickerFutureDate));
         }
         
         [Test]
-        public void CheckMaxPassengerAdultTicket()
+        public void ObtainMaxPassengerAdultTicket()
         {
             int MaxNumberPassengersAdultTicket = 10;
             IWebElement PassengerPickerShow = GetWebElement("//div[@id='flt-pax-button']");
