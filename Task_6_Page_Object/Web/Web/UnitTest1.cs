@@ -27,7 +27,7 @@ namespace Web
         }
 
         [Test]
-        public void CheckPastDate()
+        public void TestObtainPastDate()
         {
             PageFactory.InitElements(webDriver, homePage);
             homePage.DatePickerPastDate.Click();
@@ -36,7 +36,7 @@ namespace Web
             Assert.IsTrue(IsDisabledCalendarDate(homePage.DatePickerPastDate));
         }
         [Test]
-        public void CheckFutureDate()
+        public void TestObtainFutureDate()
         {
             PageFactory.InitElements(webDriver, homePage);
 	    int NumberNextMonthDatePicker = 9;
@@ -49,7 +49,7 @@ namespace Web
         }
 
         [Test]
-        public void CheckMaxPassengerAdultTicket()
+        public void TestObtainMaxPassengerAdultTicket()
         {
             PageFactory.InitElements(webDriver, homePage);          
 	    int MaxNumberPassengersAdultTicket = 10;
