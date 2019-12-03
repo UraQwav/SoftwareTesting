@@ -40,5 +40,22 @@ namespace Web.Pages
             string disabled = element.GetAttribute("class");
             return disabled == disabledClassName;
         }
+        public HomePage ClickDatePickerPastDate()
+        {
+            DatePickerShow.Click();
+            for (int numberOfClick = 2; numberOfClick > 0; numberOfClick--)
+                DatePickerPastDate.Click();
+            return this;
+        }
+        public HomePage ClickDatePickerFutureDate()
+        {
+            int NumberNextMonthDatePicker = 9;
+            DatePickerShow.Click();
+            for (int numberOfClick = NumberNextMonthDatePicker; numberOfClick > 0; numberOfClick--)
+                NextButton.Click();
+            for (int numberOfClick = 2; numberOfClick > 0; numberOfClick--)
+                DatePickerFutureDate.Click();
+            return this;
+        }
     }
 }
