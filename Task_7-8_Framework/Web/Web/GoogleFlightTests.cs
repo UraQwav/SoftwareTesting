@@ -21,6 +21,7 @@ namespace Web
     public class Tests : TestConfig
     {    
         [Test]
+        [Category("DateTest")]
         public void TestObtainPastDate()
         {
             MakeScreenshotWhenFail(() =>
@@ -31,6 +32,7 @@ namespace Web
             });
         }
         [Test]
+        [Category("DateTest")]
         public void TestObtainFutureDate()
         {
             MakeScreenshotWhenFail(() =>
@@ -42,6 +44,7 @@ namespace Web
         }
         
         [Test]
+        [Category("SearchTest")]
         public void TestToVerifyTheIssuanceOfSearchResult()
         {
             MakeScreenshotWhenFail(() =>
@@ -52,6 +55,7 @@ namespace Web
             });
         }
         [Test]
+        [Category("Passenger")]
         public void TestObtainMaxPassengerAdultTicket()
         {
             HomePage homePage = new HomePage(Driver)
@@ -59,6 +63,7 @@ namespace Web
             Assert.IsTrue(homePage.IsDisabledAddPassengersAdult(homePage.AddPassenger[homePage.selectAdultPassenger]));
         }
         [Test]
+        [Category("Passenger")]
         public void TestObtainMaxPassengerAdultTicketWithInfantsOnSlap()
         {
             MakeScreenshotWhenFail(() =>
@@ -69,6 +74,7 @@ namespace Web
             });
         }
         [Test]
+        [Category("SearchTest")]
         public void TestToVerifyTheIssuanceOfOfferResult()
         {
             MakeScreenshotWhenFail(() =>
@@ -79,6 +85,7 @@ namespace Web
             });
         }
         [Test]
+        [Category("SearchTest")]
         public void TestToOpenSuggestedTripsFromDepartureCity()
         {
             MakeScreenshotWhenFail(() =>
@@ -89,6 +96,7 @@ namespace Web
             });
         }
         [Test]
+        [Category("UserTest")]
         public void TestToSignInUser()
         {
             MakeScreenshotWhenFail(() =>
@@ -102,6 +110,7 @@ namespace Web
             });
         }
         [Test]
+        [Category("Passenger")]
         public void TestObtainMaxPassengerAdultTicketWithInfants()
         {
             MakeScreenshotWhenFail(() =>
@@ -112,6 +121,7 @@ namespace Web
             });
         }
         [Test]
+        [Category("Passenger")]
         public void TestObtainMaxPassengerAdultTicketWithInfantsAndChildrens()
         {
             MakeScreenshotWhenFail(() =>
